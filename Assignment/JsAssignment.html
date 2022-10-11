@@ -1,0 +1,42 @@
+<DOCYTPE HTML>
+	<head>
+		<script>
+			function print(){
+     	
+		var number=document.getElementById('inputId').value;
+		if(number==0){
+			document.getElementById("resultId").innerHTML="Please Enter Number";
+		}
+		else if(number%3==0&&number%5==0){
+			document.getElementById("resultId").innerHTML="Id Is Devided by 3 and 5";
+		}
+		else if(number%3==0){
+			document.getElementById("resultId").innerHTML="  It devid by 3 only ";
+		}
+		else if( number%5==0){
+			document.getElementById("resultId").innerHTML="  It devid by 5 only ";
+		}
+		else{
+			document.getElementById("resultId").innerHTML="It is Not Devided by 3 and 5 ";
+		}
+	}
+	</script>
+	</head>
+	
+	<body style="text-align:center;">
+      
+    <div id="DivId1" style="background-color: skyblue;">
+          
+        <h2><br>DIVITION <br><br></h2>
+          
+    </div>
+
+       <div   style="text-align:center; height: 300px; width:500px ;background-color:lightpink;margin:auto; padding: 50px 0px 0px 0px  ;border-radius: 10px">
+       	      Enter Number: <input type="number" name="Given" id="inputId" style="border-style: solid; border-radius: 10px;"><br><br>
+              <input type="button" value="click" onclick="print()" style="height: 20px; width: 40px; border-radius: 150px;"> 
+
+              <div id="resultId" style="text-align:center; height: 50px; width:480px ;background-color:lightgreen;margin:auto; padding: 50px 0px 0px 0px  ;border-radius: 10px ; margin: 10px;">
+              	
+              </div>
+       </div>
+	</body>

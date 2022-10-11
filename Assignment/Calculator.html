@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+   <html>
+     <head>
+     	<title>Calcultor</title>
+     	<style>
+     		#display{
+     			height: 50px;
+     			width: 200px;
+     			border: 1px solid black;
+     			border-radius:10px;
+     			background-color: lightgray;
+
+     		}
+     		.number{
+     			height: 30px;
+     			width: 40px;
+     			background-color: lightgray;
+     			border-radius: 7px;
+     			margin:10px 5px 10px 5px;
+     		}
+     		#main{
+     			background-color: lightcoral;
+     			width: 250px;
+     			margin-left: 550px;
+     			border-radius: 10px;
+     		}
+     	</style>
+     	 
+     	<script type="text/javascript">
+           var input="";
+     		function calc(val)
+                {
+                	let element = document.getElementById('display');
+                	if(val == "="){
+                		try{
+                			
+                			let ans = eval(input);
+                			element.value = ans;
+                		}catch{
+                			element.value = "";
+                			alert("Invalid Expression");
+                		}
+                		return;
+                	}
+                	input+=val;
+                	element.value=input;
+                  console.log(val);
+             }     	
+             function reloadInput(val){
+                  input=val;
+             }
+         </script>
+     </head>
+     <body  align="center" style="background-color: lightblue;">
+     	<head>CALCULATOR</head>
+     	<br>
+     	<br>
+     	<div align="center" id ="main">
+     		<br>
+     			<div ><input type="text" id="display" value="" oninput="reloadInput(this.value)"></div>
+     			<div class="Nopad">
+     			   <table>
+     			   	  <tr>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('9')">9</button></div></td>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('8')">8</button></div></td>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('7')">7</button></div></td>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('c')">C</button></div></td>
+     			   	  </tr>
+     			   	  <tr>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('6')">6</button></div></td>
+     			   	  	<td><div><button type="button" class="number" onclick="calc('5')">5</button></div></td>
+     			   	  	<td><div ><button class="number" type="button" onclick="calc('4')">4</button></div></td>
+     			   	  	<td><div><button  class="number" type="button" onclick="calc('-')">-</button></div></td>
+     			   	  </tr>
+     			   	  <tr>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('3')">3</button></div></td>
+     			   	  	<td><div ><button  type="button" class="number" onclick="calc('2')">2</button></div></td>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('1')">1</button></div></td>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('+')">+</button></div></td>
+     			   	  </tr>
+     			   	  <tr>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('0')">0</button></div></td>
+     			   	  	<td><div ><button  type="button" class="number" onclick="calc('/')">/</button></div></td>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('=')">=</button></div></td>
+     			   	  	<td><div ><button type="button" class="number" onclick="calc('*')">X</button></div></td>
+     			   	  </tr>
+     			   </table> 
+     			</div>
+     	</div>
+     </body>
+   </html>
